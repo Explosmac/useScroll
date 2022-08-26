@@ -7,6 +7,7 @@ const useScroll = () => {
   const [scrollHeight, setScrollHeight] = useState(0)
   const scrollTopRef = useRef(scrollTop)
   const scrollPage = scrollTop / clientHeight
+  const scrollBottom = scrollHeight - scrollTop + clientHeight
 
   const setScrollTop = (data) => {
     scrollTopRef.current = data
@@ -19,7 +20,6 @@ const useScroll = () => {
       setScrolling(e.target.documentElement.scrollTop !== scrollTopRef.current)
     }
     const onResize = () => {
-      console.log("Resized")
       setScrollTop(window.document.documentElement.scrollTop)
       setClientHeight(window.document.documentElement.clientHeight)
       setScrollHeight(window.document.documentElement.scrollHeight)
@@ -35,7 +35,7 @@ const useScroll = () => {
       window.document.documentElement.removeEventListener("resize", onResize)
     }
   }, [])
-  return { scrollTop, scrollPage, scrolling, clientHeight, scrollHeight }
+  return { scrollTop, scrollPage, scrolling, clientHeight, scrollHeight, scrollBottom }
 }
 
 export default useScroll

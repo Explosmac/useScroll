@@ -4,11 +4,15 @@
     "react": "^18.2.0"
   },
   "name": "scroll-hook-state",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Hook to get window scroll position NextJS",
   "main": "index.js",
   "repository": "https://github.com/Explosmac/useScroll",
   "author": "Hiago Maciel <hiago138@hotmail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "typescript": "^4.8.2"
+  }
 }
